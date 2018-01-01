@@ -35,17 +35,26 @@ const fileHandler = function(file,res){
     errorFileHandler(res);
     return;
   }
-  if()
   existsFileHandler(file,res);
 }
 
-let requestHandler = function(req,res){
+const optionHandler = function(req){
+  req.on('data',function(data){
+    console.log(data.toString());
+  });
+  return;
+}
+
+const requestHandler = function(req,res){
   let filePath = req.url.replace('/','');
   let method = req.method;
   if(filePath == ''){
     filePath = 'index.html'
   }
   console.log(`${method}  ${req.url}`);
+  if(method == 'POST'&&filePath == 'questions.html'){
+    optionHandler(req)
+  }
   fileHandler(filePath,res);
 }
 const server = http.createServer(requestHandler);

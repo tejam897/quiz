@@ -5,7 +5,7 @@ let Quiz = function(){
   this.currentQuestion = 0;
 }
 
-Quiz.prototpe.getScore = function(){
+Quiz.prototype.getScore = function(){
   return `${this.correctAnswers}/${this.questionsAttempted}`;
 }
 
