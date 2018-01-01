@@ -1,0 +1,37 @@
+body {
+  background-color: #c7c0b5;
+
+}
+h1 {
+  margin: 50px;
+  text-align: center
+}
+
+h2 {
+  font-size: 35px;
+}
+
+#instructions {
+  font-size: 25px;
+}
+#startButton {
+  margin-left: 700px;
+  margin-bottom: 100px auto;
+  font-size: 20px;
+}
+
+.quiz {
+  margin: auto;
+}
+
+#questionsBlock {
+  font-size: 30px;
+}
+
+.questions {
+  text-align: left;
+}
+table,td  {
+  font-style: italic;
+  width: 100px
+}
