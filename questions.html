@@ -4,17 +4,19 @@
     <meta charset="utf-8">
     <title>Questions</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="quiz.js"></script>
+    <script type="text/javascript" src = 'question_change.js'></script>
   </head>
   <body>
     <div class="questions">
       <p id = 'questionsBlock'> What is capital of India?</p>
       <form class="options" method="post">
-        <input type="radio" name="option" value = 'New Delhi'>New Delhi <br>
-        <input type="radio" name="option" value = 'Mumbai'>Mumbai<br>
-        <input type="radio" name="option" value = 'Bengalur'>Bengalur<br>
-        <input type="radio" name="option" value = 'None'>None<br>
-        <input type="submit" name="" value="nextQuestion">
+        <input type="radio" name="option1" value = 'New Delhi'>New Delhi <br>
+        <input type="radio" name="option1" value = 'Mumbai'>Mumbai<br>
+        <input type="radio" name="option1" value = 'Bengalur'>Bengalur<br>
+        <input type="radio" name="option1" value = 'None'>None<br>
+        <input type="submit" name="" value="nextQuestion" onclick="changeQuestion()">
       </form>
     </div>
   </body>

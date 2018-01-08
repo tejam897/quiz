@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const PORT = 7777;
+let answers = [];
 const getTypeOfFile = function(file){
   let typeOfFile = file.split('.')[1];
   let headers = {
@@ -39,9 +40,14 @@ const fileHandler = function(file,res){
 }
 
 const optionHandler = function(req){
+  let selectedOption = "";
   req.on('data',function(data){
-    console.log(data.toString());
+    selectedOption += data.toString();
   });
+  req.on("end",()=>{
+    answers.push(selectedOption);
+    console.log(answers);
+  })
   return;
 }
 
@@ -53,7 +59,8 @@ const requestHandler = function(req,res){
   }
   console.log(`${method}  ${req.url}`);
   if(method == 'POST'&&filePath == 'questions.html'){
-    optionHandler(req)
+    optionHandler(req);
+    return;
   }
   fileHandler(filePath,res);
 }
